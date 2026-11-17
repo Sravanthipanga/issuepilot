@@ -1,0 +1,1 @@
+{"body":"`count_available` in shopcalc/inventory.py undercounts: with 3 items all in stock it returns 2. The last item in the list is always skipped — looks like an off-by-one in the loop range.","labels":["bug"],"number":102,"title":"Available count is wrong when the last item is in stock"}

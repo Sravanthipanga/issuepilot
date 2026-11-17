@@ -1,0 +1,1 @@
+{"body":"Checkout totals are wrong. `total_with_tax` in shopcalc/pricing.py adds the tax_rate as a flat amount: total_with_tax(100, 0.2) returns 100.2 instead of 120. The tax rate is a percentage fraction and should be applied to the amount.","labels":["bug"],"number":101,"title":"Tax is added as a flat amount instead of a percentage"}

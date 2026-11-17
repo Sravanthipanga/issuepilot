@@ -1,0 +1,22 @@
+services:
+  # The IssuePilot orchestrator itself.
+  pilot:
+    build: .
+    environment:
+      ISSUEPILOT_SANDBOX: local
+      # ISSUEPILOT_ENGINE: openai        # or anthropic, with the key below
+      # OPENAI_API_KEY: ${OPENAI_API_KEY}
+      # GITHUB_TOKEN: ${GITHUB_TOKEN}    # only needed for --open-pr / --issue-number
+    command: demo
+
+  # A disposable sandbox worker: the pattern the DockerSandbox mirrors —
+  # an isolated, network-less container whose only job is running tests
+  # against a mounted copy of a repository.
+  sandbox:
+    image: python:3.12-slim
+    network_mode: "none"
+    mem_limit: 512m
+    volumes:
+      - ./sample_repo:/work:ro
+    working_dir: /work
+    command: sh -c "pip install -q pytest && python -m pytest -q"

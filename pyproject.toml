@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "issuepilot"
+version = "0.1.0"
+description = "IssuePilot — a LangGraph multi-agent orchestration system that turns a GitHub Issue into a researched, tested pull request"
+license = { text = "Zlib" }
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph",
+    "pydantic>=2",
+    "typer",
+    "rich",
+    "httpx",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+issuepilot = "issuepilot.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["issuepilot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
