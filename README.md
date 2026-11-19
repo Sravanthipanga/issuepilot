@@ -2,7 +2,7 @@
 
 **A multi-agent orchestration system that turns a GitHub Issue into a researched, tested pull request — autonomously.**
 
-![Python 3.12](https://img.shields.io/badge/python-3.12-blue) ![LangGraph](https://img.shields.io/badge/orchestration-LangGraph-purple) ![Tests](https://img.shields.io/badge/tests-7%20passing-brightgreen) ![License](https://img.shields.io/badge/license-zlib-blue)
+![Python 3.12](https://img.shields.io/badge/python-3.12-blue) ![LangGraph](https://img.shields.io/badge/orchestration-LangGraph-purple) ![Tests](https://img.shields.io/badge/tests-7%20passing-brightgreen) ![License](https://img.shields.io/badge/license-zlib-blue) [![CI](https://github.com/Sravanthipanga/issuepilot/actions/workflows/ci.yml/badge.svg)](https://github.com/Sravanthipanga/issuepilot/actions/workflows/ci.yml)
 
 ```console
 $ issuepilot demo
@@ -118,4 +118,4 @@ pytest -q   # routing, reader, transforms, and three end-to-end graph runs
 
 ## License
 
-zlib License — see [LICENSE](LICENSE). © 2026 Sravanthi Panga.
+MIT License — see [LICENSE](LICENSE). © 2026 Sravanthi Panga.
